@@ -1,8 +1,7 @@
 <?php
 session_start();
-include('../includes/db.php');
-include('../includes/header.php');
-
+include('../includes/db.php'); // Include database connection
+include('../includes/header.php'); // Include header
 
 // Check if the article ID is passed in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -17,7 +16,7 @@ $stmt = $conn->prepare('SELECT articles.*, users.username FROM articles JOIN use
 $stmt->bindParam(':id', $article_id, PDO::PARAM_INT);
 $stmt->execute();
 
-// Fetch the article (returns false if no article found)
+// Fetch the article (returns false if no article is found)
 $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$article) {
@@ -33,15 +32,9 @@ if (!$article) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($article['title']); ?> - EcoFit Life</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/styles.css"> <!-- Ensure correct CSS path -->
 </head>
 <body>
-
-<header>
-    <nav>
-        <a href="articles.php">Back to Articles</a>
-    </nav>
-</header>
 
 <main>
     <!-- Article Details -->
@@ -49,7 +42,7 @@ if (!$article) {
         <h1><?php echo htmlspecialchars($article['title']); ?></h1>
         <p>By <?php echo htmlspecialchars($article['username']); ?> on <?php echo date('F j, Y', strtotime($article['created_at'])); ?></p>
         <div>
-            <?php echo nl2br(htmlspecialchars($article['content'])); ?> <!-- nl2br() converts newlines to <br> for better formatting -->
+            <?php echo nl2br(htmlspecialchars($article['content'])); ?> <!-- nl2br() converts newlines to <br> for formatting -->
         </div>
     </article>
 
@@ -91,7 +84,7 @@ if (!$article) {
     </section>
 </main>
 
-<?php include('../includes/footer.php'); ?>
+<?php include('../includes/footer.php'); ?> <!-- Include footer -->
 
 </body>
 </html>

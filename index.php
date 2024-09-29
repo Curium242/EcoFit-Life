@@ -51,7 +51,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <h3><?= htmlspecialchars($article['title']) ?></h3>
                             <p>By <?= htmlspecialchars($article['username']) ?></p>
                             <p><?= substr(htmlspecialchars($article['content']), 0, 100) ?>...</p>
-                            <a href="article.php?id=<?= $article['id'] ?>">Read More</a>
+                            <a href="/articles/article.php?id=<?= $article['id'] ?>">Read More</a>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
