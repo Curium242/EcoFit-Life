@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../includes/db.php'); // Include database connection
-include('../includes/header.php'); // Include header
+include('../includes/db.php'); 
+include('../includes/header.php'); 
 
 // Check if the article ID is passed in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -32,7 +32,7 @@ if (!$article) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($article['title']); ?> - EcoFit Life</title>
-    <link rel="stylesheet" href="../assets/styles.css"> <!-- Ensure correct CSS path -->
+    <link rel="stylesheet" href="../assets/styles.css"> 
 </head>
 <body>
 
@@ -46,7 +46,6 @@ if (!$article) {
         </div>
     </article>
 
-    <!-- Display Comments -->
     <section class="comments">
         <h2>Comments</h2>
 
