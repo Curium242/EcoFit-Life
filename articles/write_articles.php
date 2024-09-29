@@ -1,6 +1,7 @@
 <?php
-session_start();
-include('../includes/header.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 // Redirect if the user is not logged in
@@ -10,6 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 require '../includes/db.php'; // Include the database connection
+include('../includes/header.php');
+
 
 // Handle article submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -38,9 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/styles.css"> <!-- Correct relative path to CSS -->
 </head>
 <body>
-    <header>
-        <h1>Write an Article</h1>
-    </header>
 
     <main>
         <section>

@@ -2,7 +2,7 @@
 require '../includes/db.php'; 
 include('../includes/header.php');
 // Include the database connection
-session_start(); // Start the session if needed
+//session_start(); // Start the session if needed
 
 // Fetch articles from the database
 $stmt = $conn->query('SELECT articles.id, articles.title, articles.content, articles.created_at, users.username FROM articles JOIN users ON articles.user_id = users.id ORDER BY articles.created_at DESC');
