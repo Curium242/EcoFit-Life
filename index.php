@@ -47,6 +47,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="hero-content">
                 <h1>EcoFit Life</h1>
                 <h3>Embrace a Sustainable and Healthy Lifestyle</h3>
+                
                 <a href="articles/articles.php" class="cta-button">Get Started</a>
             </div>
         </section>
@@ -69,7 +70,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php if ($articles): ?>
                     <?php foreach ($articles as $article): ?>
                         <div class="article-card">
-                            <img src="assets/images/default-article-image.jpg" alt="<?= htmlspecialchars($article['title']) ?>">
+                            <img src="assets/images/0.jpg" alt="<?= htmlspecialchars($article['title']) ?>">
                             <h3><?= htmlspecialchars($article['title']) ?></h3>
                             <p>By <?= htmlspecialchars($article['username']) ?></p>
                             <p><?= substr(htmlspecialchars($article['content']), 0, 100) ?>...</p>
