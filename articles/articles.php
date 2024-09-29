@@ -22,17 +22,17 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <a href="index.php" class="site-name">EcoFit Life</a>
             </div>
             <ul>
-                <li><a href="articles/articles.php">Articles</a></li>
-                <li><a href="fitness-tips.html">Fitness Tips</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="../fitness-tips.html">Fitness Tips</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../resources.html">Resources</a></li>
+                <li><a href="../contact.html">Contact</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="articles/write_articles.php">Write an Article</a></li> 
-                    <li><a href="auth/logout.php">Logout</a></li>
+                    <li><a href="write_articles.php">Write an Article</a></li> 
+                    <li><a href="../auth/logout.php">Logout</a></li>
                 <?php else: ?>
-                    <li><a href="auth/login.php">Login</a></li>
-                    <li><a href="auth/register.php">Register</a></li>
+                    <li><a href="../auth/login.php">Login</a></li>
+                    <li><a href="../auth/register.php">Register</a></li>
                 <?php endif; ?>
             </ul>
         </nav>
