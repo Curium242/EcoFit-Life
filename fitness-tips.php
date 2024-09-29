@@ -1,3 +1,7 @@
+<?php
+include('includes/db.php'); // Database connection
+include('includes/header.php'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +21,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a href="index.php" class="logo"><img id="logo" src="assets/images/logo.png" alt="EcoFit Life Logo"></a>
-                <a href="index.php" class="site-name">EcoFit Life</a>
-            </div>
-            <ul>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="fitness-tips.html">Fitness Tips</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+
 
     <!-- Fitness Tips Section -->
     <main>
@@ -73,3 +62,4 @@
 </footer>
 </body>
 </html>
+<?php include('includes/footer.php'); ?>
