@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('../includes/db.php');
+include('../includes/header.php');
+
 
 // Check if the article ID is passed in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -89,9 +91,7 @@ if (!$article) {
     </section>
 </main>
 
-<footer>
-    <!-- Your footer content -->
-</footer>
+<?php include('../includes/footer.php'); ?>
 
 </body>
 </html>
