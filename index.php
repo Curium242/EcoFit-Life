@@ -1,6 +1,6 @@
 <?php
 include('includes/db.php'); // Database connection
-include('includes/header.php'); // Include the header
+include('includes/header.php'); 
 
 
 // Fetch the latest 3 articles
@@ -71,7 +71,8 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </main>
 
     <!-- Footer -->
-    <?php include('includes/footer.php'); // Include the footer ?>
 
 </body>
 </html>
+<?php include('includes/footer.php'); ?>
+

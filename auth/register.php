@@ -1,5 +1,6 @@
 <?php
 require '../includes/db.php';  // Connect to the database
+include('../includes/header.php'); 
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -56,3 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </body>
 </html>
+<?php include('../includes/footer.php'); ?>
+
