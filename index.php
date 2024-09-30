@@ -14,7 +14,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoFit Life</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -38,7 +38,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="what-we-do-content">
                 <img src="assets/images/image2.jpg" alt="Eco-friendly practices" class="what-we-do-image"> <!-- Corrected image path -->
                 <div class="what-we-do-text">
-                    <p>At EcoFit Life, we help you lead a balanced, sustainable lifestyle. Learn about eco-friendly practices, fitness, and more!</p>
+                <p>At EcoFit Life, we're all about helping you lead a balanced, sustainable lifestyle. We offer expert tips on eco-friendly practices, nutrition, and fitness, while also giving you the space to share your own thoughts through blogs on lifestyle, the environment, and more. Together, we can promote both personal and environmental well-being.</p>
                 </div>
             </div>
         </section>
@@ -48,7 +48,12 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h2>Our Latest Articles</h2>
             <div class="articles-container">
                 <?php if ($articles): ?>
-                    <?php foreach ($articles as $article): ?>
+                    <?php
+                    $articleCount = 0; // Initialize a counter to track the number of articles
+                    foreach ($articles as $article):
+                        if ($articleCount >= 6) break; // Stop the loop after 6 articles
+                        $articleCount++; // Increment the counter for each article displayed
+                    ?>
                         <div class="article-card">
                             <img src="assets/images/0.jpg" alt="<?= htmlspecialchars($article['title']) ?>">
                             <h3><?= htmlspecialchars($article['title']) ?></h3>
