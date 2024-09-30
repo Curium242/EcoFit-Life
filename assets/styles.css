@@ -1,10 +1,15 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     height: 100%;
     font-family: Tahoma, Courier, monospace;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     /* background-color: #f4f4f4; */
     color: #333;
     line-height: 1.6;
@@ -60,18 +65,22 @@ header nav ul li a {
     text-decoration: none;
     font-size: 1.5em;
     transition: color 0.3s ease;
+
 }
+
 header nav ul li a:hover {
     color: #35d400;
 }
+
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 80px;
-
+    background-color: #fff;
 }
+
 .hero, .what-we-do, .featured-articles {
     min-height: 100vh;
     display: flex;
@@ -80,8 +89,8 @@ main {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-
 }
+
 .hero {
     background: url('images/hero-banner.jpg') no-repeat center center/cover;
     color: #fff;
@@ -95,6 +104,7 @@ main {
     text-align: center;
     color: #fff;
 }
+
 .cta-button {
     padding: 10px 20px;
     background-color: #009c03;
@@ -112,7 +122,6 @@ main {
     margin-bottom: 20px;
     text-align: center;
 }
-
 
 .cta-button:hover {
     background-color: #35d400;
@@ -186,7 +195,6 @@ main {
     }
 }
 
-
 .article-card img {
     max-width: 100%;
     border-radius: 5px;
@@ -206,10 +214,6 @@ main {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-}
-
-main {
-    background-color: #fff;
 }
 
 .get-in-touch {
