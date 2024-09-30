@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../includes/db.php'); 
-include('../includes/header.php'); 
+// include('../includes/header.php'); 
 
 // Check if the article ID is passed in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -34,7 +34,8 @@ if (!$article) {
 </head>
 
 <body>
-
+    <?php include '../includes/header.php'; ?> <!-- Include the header -->
+    
     <main>
         <!-- Article Details -->
         <article>

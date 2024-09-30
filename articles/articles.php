@@ -1,9 +1,6 @@
 <?php
 session_start();
-require '../includes/db.php'; 
-include('../includes/header.php');
-// Include the database connection
-//session_start(); // Start the session if needed
+require '../includes/db.php';
 
 // Fetch articles from the database
 $stmt = $conn->query('SELECT articles.id, articles.title, articles.content, articles.created_at, users.username FROM articles JOIN users ON articles.user_id = users.id ORDER BY articles.created_at DESC');
@@ -23,8 +20,10 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php include '../includes/header.php'; ?> <!-- Include the header -->
 
     <main>
-        <section>
+        <section class="articles-hero">
             <h1>All Articles</h1>
+        </section>
+        <section class="articles-container">
             <?php if ($articles): ?>
                 <?php foreach ($articles as $article): ?>
                     <div class="article-card">
