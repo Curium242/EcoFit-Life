@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Contact Hero Section -->
         <section class="login-hero">
             <h1>Login</h1>
+            <p>Login to post articles and comment.</p>
         </section>
         <section class="form-section">
             <?php if (isset($error)): ?>
