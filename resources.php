@@ -10,7 +10,7 @@ session_start(); // Start the session if needed
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - EcoFit Life</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="../assets/styles.css?v=<?php echo time(); ?>">
 </head>
 
 <body>

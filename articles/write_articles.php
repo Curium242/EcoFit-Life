@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Write Article - EcoFit Life</title>
-    <link rel="stylesheet" href="../assets/styles.css"> <!-- Correct relative path to CSS -->
+    <link rel="stylesheet" href="../assets/styles.css?v=<?php echo time(); ?>"> <!-- Correct relative path to CSS -->
 </head>
 
 <body>
