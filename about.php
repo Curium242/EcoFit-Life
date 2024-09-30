@@ -29,7 +29,7 @@ session_start(); // Start the session if needed
         <p>What started as a small blog has grown into a comprehensive guide that reaches people all over the world. We’re excited to continue this journey with you and help make the world a better place, one step at a time.</p>
     </section>
 
-    <?php include 'includes/footer.php'; ?> <!-- Include the footer -->
+    <?php include 'includes/footer.php'; ?> 
 </body>
 
 </html>
