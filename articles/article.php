@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('../includes/db.php');
+include('../includes/db.php'); 
+include('../includes/header.php'); 
 
 // Check if the article ID is passed in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -15,7 +16,7 @@ $stmt = $conn->prepare('SELECT articles.*, users.username FROM articles JOIN use
 $stmt->bindParam(':id', $article_id, PDO::PARAM_INT);
 $stmt->execute();
 
-// Fetch the article (returns false if no article found)
+// Fetch the article (returns false if no article is found)
 $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$article) {

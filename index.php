@@ -1,6 +1,7 @@
 <?php
-session_start();
-require 'includes/db.php'; // Adjust path to db.php
+include('includes/db.php'); // Database connection
+include('includes/header.php'); 
+
 
 // Fetch the latest 3 articles
 $stmt = $conn->query('SELECT articles.*, users.username FROM articles JOIN users ON articles.user_id = users.id ORDER BY articles.created_at DESC LIMIT 3');
@@ -59,7 +60,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <h3><?= htmlspecialchars($article['title']) ?></h3>
                             <p>By <?= htmlspecialchars($article['username']) ?></p>
                             <p><?= substr(htmlspecialchars($article['content']), 0, 100) ?>...</p>
-                            <a href="article.php?id=<?= $article['id'] ?>">Read More</a>
+                            <a href="/articles/article.php?id=<?= $article['id'] ?>">Read More</a>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>

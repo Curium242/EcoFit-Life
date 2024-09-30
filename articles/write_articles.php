@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 // Redirect if the user is not logged in
 if (!isset($_SESSION['user_id'])) {
@@ -8,6 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 require '../includes/db.php'; // Include the database connection
+include('../includes/header.php');
+
 
 // Handle article submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -68,4 +73,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include '../includes/footer.php'; ?> <!-- Include the footer -->
 </body>
 </html>
+
 
