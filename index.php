@@ -1,4 +1,6 @@
 <?php
+session_start(); 
+
 include('includes/db.php'); // Database connection
 include('includes/header.php'); 
 
@@ -19,7 +21,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <?php include 'includes/header.php'; ?> <!-- Include the header -->
+    <?php include 'includes/header.php'; ?>
 
     <!-- Main Content -->
     <main>
