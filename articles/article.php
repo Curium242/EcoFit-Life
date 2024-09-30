@@ -36,7 +36,7 @@ if (!$article) {
 
 <body>
 
-<?php include '../includes/header.php'; ?> <!-- Include the header -->
+    <?php include '../includes/header.php'; ?> <!-- Include the header -->
 
     <main>
         <!-- Article Details -->

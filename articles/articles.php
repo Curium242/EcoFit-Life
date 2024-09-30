@@ -12,7 +12,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <meta charset="UTF-8">
-    <title>All Articles - EcoFit Life</title>
+    <title>Articles - EcoFit Life</title>
     <link rel="stylesheet" href="../assets/styles.css?v=<?php echo time(); ?>">
 </head>
 
@@ -40,9 +40,8 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p>No articles found</p>
             <?php endif; ?>
         </section>
-
-        <?php include '../includes/footer.php'; ?> <!-- Include the footer -->
     </main>
+    <?php include '../includes/footer.php'; ?> <!-- Include the footer -->
 </body>
 
 </html>

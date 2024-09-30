@@ -15,6 +15,10 @@ body {
     line-height: 1.6;
 }
 
+section {
+    padding: 10px 0 20px 0;
+}
+
 header {
     background-color: #222; 
     padding: 10px 20px;
@@ -370,3 +374,55 @@ footer .address-author-wrapper {
     width: 100%;
 }
 
+.form-section {
+    padding-left: 5%;
+
+    padding-bottom: 20px;
+}
+
+.login {
+    padding-left: 5%;
+    background-color: #f7f7f7;
+}
+
+.login-hero {
+    padding-left: 5%;
+}
+
+.login-form {
+    display: flexbox;
+    max-width: 600px;
+}
+
+/* .login-form .form-group {
+    display: flex;
+    align-items: baseline;
+
+
+} */
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input, .login-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    padding: 10px 20px;
+    background-color: #009c03;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #35d400;
+}

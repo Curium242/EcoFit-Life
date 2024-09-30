@@ -40,23 +40,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include '../includes/header.php'; ?> <!-- Include the header -->
 
     <main>
-        <section>
-            <h2>Share Your Knowledge</h2>
+        <!-- Contact Hero Section -->
+        <section class="get-in-touch">
+            <h1>Share Your Knowledge</h1>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
             <?php if (isset($error)): ?>
                 <p style="color: red;"><?= $error ?></p>
             <?php endif; ?>
-            <form action="write_articles.php" method="POST">
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="content">Content:</label><br>
-                <textarea id="content" name="content" rows="8" required></textarea><br><br>
-                <button type="submit">Submit Article</button>
+            <form action="write_articles.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="title">Title:</label><br>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content:</label><br>
+                    <textarea id="content" name="content" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Article</button>
             </form>
+
         </section>
     </main>
 
     <?php include '../includes/footer.php'; ?> <!-- Include the footer -->
-
 </body>
-
 </html>
+
