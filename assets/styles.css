@@ -258,8 +258,8 @@ main {
 }
 
 .fitness-tips {
-    margin-top: 5%;
-    padding: 2% 5%;
+    margin-top: -5%;
+    padding: 0 5%;
 }
 
 .resources {
@@ -423,6 +423,6 @@ footer .address-author-wrapper {
     background-color: #35d400;
 }
 
-.articles-hero {
+.articles-hero, .article, .comments {
     padding-left: 5%;
 }

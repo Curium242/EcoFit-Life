@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../includes/db.php'); 
+include('../includes/db.php');
 // include('../includes/header.php'); 
 
 // Check if the article ID is passed in the URL
@@ -35,16 +35,16 @@ if (!$article) {
 
 <body>
     <?php include '../includes/header.php'; ?> <!-- Include the header -->
-    
+
     <main>
         <!-- Article Details -->
-        <article>
+        <section class="article">
             <h1><?php echo htmlspecialchars($article['title']); ?></h1>
             <p>By <?php echo htmlspecialchars($article['username']); ?> on <?php echo date('F j, Y', strtotime($article['created_at'])); ?></p>
             <div>
                 <?php echo nl2br(htmlspecialchars($article['content'])); ?> <!-- nl2br() converts newlines to <br> for better formatting -->
             </div>
-        </article>
+        </section>
 
         <!-- Display Comments -->
         <section class="comments">
@@ -73,7 +73,7 @@ if (!$article) {
             <!-- Add Comment Form -->
             <?php if (isset($_SESSION['user_id'])): ?>
                 <h3>Add a Comment</h3>
-                <form method="POST" action="comment.php">
+                <form method="POST" action="comment.php" class="contact-form">
                     <textarea name="comment" placeholder="Write your comment..." required></textarea>
                     <input type="hidden" name="article_id" value="<?php echo $article_id; ?>">
                     <button type="submit">Submit</button>
