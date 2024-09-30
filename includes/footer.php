@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer>
     <div class="footer-content">
-        <img id="footer-logo" src="assets/images/logo.png" alt="EcoFit Life Logo">
+        <img id="footer-logo" src="../assets/images/logo.png" alt="EcoFit Life Logo">
         <div class="address-author-wrapper">
             <address>
                 123 Green Lane<br>
