@@ -1,9 +1,8 @@
 <?php
-require '../includes/db.php';  // Connect to the database
-session_start(); // Start the session
+require '../includes/db.php';  
+session_start(); 
 include('../includes/header.php'); 
 
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
