@@ -11,12 +11,10 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 
 $article_id = $_GET['id'];
 
-// Fetch the article from the database using the article ID
 $stmt = $conn->prepare('SELECT articles.*, users.username FROM articles JOIN users ON articles.user_id = users.id WHERE articles.id = :id');
 $stmt->bindParam(':id', $article_id, PDO::PARAM_INT);
 $stmt->execute();
 
-// Fetch the article (returns false if no article is found)
 $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$article) {
