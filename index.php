@@ -9,36 +9,16 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoFit Life</title>
-    <link rel="stylesheet" href="assets/styles.css"> 
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a href="index.php" class="logo"><img id="logo" src="assets/images/logo.png" alt="EcoFit Life Logo"></a>
-                <a href="index.php" class="site-name">EcoFit Life</a>
-            </div>
-            <ul>
-                <li><a href="articles/articles.php">Articles</a></li>
-                <li><a href="fitness-tips.html">Fitness Tips</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="articles/write_articles.php">Write an Article</a></li> 
-                    <li><a href="auth/logout.php">Logout</a></li>
-                <?php else: ?>
-                    <li><a href="auth/login.php">Login</a></li>
-                    <li><a href="auth/register.php">Register</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'includes/header.php'; ?> <!-- Include the header -->
 
     <!-- Main Content -->
     <main>
@@ -47,7 +27,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="hero-content">
                 <h1>EcoFit Life</h1>
                 <h3>Embrace a Sustainable and Healthy Lifestyle</h3>
-                
+
                 <a href="articles/articles.php" class="cta-button">Get Started</a>
             </div>
         </section>
@@ -93,28 +73,9 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <img id="footer-logo" src="assets/images/logo.png" alt="EcoFit Life Logo">
-            <div class="address-author-wrapper">
-                <address>
-                    123 Green Lane<br>
-                    EcoCity, Earth<br>
-                    98765
-                </address>
-                <div class="author-info">
-                    <div class="author-column">
-                        <p>Abhay Kejriwal<br>1234567890</p>
-                    </div>
-                    <div class="author-column">
-                        <p>Govind Sankar H<br>1234567890</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include 'includes/footer.php'; ?> <!-- Include the footer -->
 
     <script src="assets/script.js"></script> <!-- Corrected path to JS -->
 </body>
+
 </html>
