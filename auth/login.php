@@ -1,7 +1,7 @@
 <?php
 require '../includes/db.php';  
 session_start(); 
-include('../includes/header.php'); 
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
