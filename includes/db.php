@@ -1,12 +1,11 @@
 <?php
-// Database connection
-$host = 'localhost';
-$dbname = 'ecofit_life';
-$username = 'root';  // Change if necessary
-$password = '';      // Add your MySQL password if necessary
+$host = 'localhost';  // Database host
+$db = 'ecofit_life';  // Database name
+$user = 'root';       // Database username
+$pass = '';           // Database password
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());

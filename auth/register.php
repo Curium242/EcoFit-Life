@@ -49,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include '../includes/header.php'; ?> <!-- Include the header -->
 
     <main class="login">
-        <!-- Contact Hero Section -->
+        <!-- Register Hero Section -->
         <section class="login-hero">
             <h1>Register</h1>
-            <p>Register to create an account.</p>
+            <p>Create your account to join the community.</p>
         </section>
         <section class="form-section">
             <?php if (isset($error)): ?>
