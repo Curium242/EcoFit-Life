@@ -1,3 +1,4 @@
+<!-- header.php -->
 <?php
 // Ensure the session is started at the beginning of the script
 if (session_status() === PHP_SESSION_NONE) {
@@ -24,7 +25,12 @@ if (isset($_SESSION['user_id'])) {
             <a href="../index.php" class="logo"><img id="logo" src="../assets/images/logo.png" alt="EcoFit Life Logo"></a>
             <a href="../index.php" class="site-name">EcoFit Life</a>
         </div>
-        <ul>
+
+        <div class="burger-menu" onclick="toggleMobileMenu()">
+            <span>&#9776;</span>
+        </div>
+
+        <ul class="navbar-menu" id="navbarMenu">
             <li><a href="../articles/articles.php">Articles</a></li>
             <li><a href="../fitness-tips.php">Fitness Tips</a></li>
             <li><a href="../about.php">About Us</a></li>
@@ -48,7 +54,6 @@ if (isset($_SESSION['user_id'])) {
                             <p><?= htmlspecialchars($username); ?></p>
                             <p>Articles Written: <?= $articleCount; ?></p>
                             <a href="../auth/user_dashboard.php">User Dashboard</a>
-                            
                         <?php endif; ?>
                         <a href="../auth/logout.php">Logout</a>
                     </div>
@@ -65,5 +70,9 @@ if (isset($_SESSION['user_id'])) {
     // Toggle dropdown visibility when profile image is clicked
     function toggleDropdown() {
         document.getElementById('dropdown-content').classList.toggle('show');
+    }
+
+    function toggleMobileMenu() {
+        document.getElementById('navbarMenu').classList.toggle('show');
     }
 </script>
