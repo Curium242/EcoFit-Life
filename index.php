@@ -52,10 +52,9 @@ $isAdmin = $loggedIn && $_SESSION['role'] === 'admin';
                     <?php foreach ($articles as $article): ?>
                         <div class="article-card">
                             <img src="uploads/<?= htmlspecialchars($article['header_image']) ?>" alt="<?= htmlspecialchars($article['title']) ?>"> <!-- Referencing uploaded images correctly -->
-                            <h3><?= htmlspecialchars($article['title']) ?></h3>
-                            <p>By <?= htmlspecialchars($article['username']) ?></p>
+                            <h2><?= htmlspecialchars($article['title']) ?></h2>
                             <p><?= substr(htmlspecialchars($article['content']), 0, 100) ?>...</p>
-                            <a href="articles/article.php?id=<?= $article['id'] ?>">Read More</a>
+                            <a href="articles/article.php?id=<?= $article['id'] ?>">Read More...</a>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>

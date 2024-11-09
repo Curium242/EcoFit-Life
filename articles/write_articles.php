@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
     $user_id = $_SESSION['user_id'];
-    
+
     // Handle file upload
     $target_dir = "../uploads/";
     $target_file = $target_dir . basename($_FILES["header_image"]["name"]);
-    
+
     if (!empty($title) && !empty($content) && !empty($_FILES["header_image"]["name"])) {
         // Move the uploaded file to the server
         move_uploaded_file($_FILES["header_image"]["tmp_name"], $target_file);
@@ -54,29 +54,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <!-- Page Hero Section -->
-        <section class="get-in-touch">
-            <h1>Share Your Knowledge</h1>
-        </section>
+        <h1 style="font-size: x-large; margin: 3% 0 0 5%">Share Your Knowledge</h1>
 
         <!-- Form Section -->
         <section class="contact-form-section">
             <?php if (isset($error)): ?>
                 <p style="color: red;"><?= $error ?></p>
             <?php endif; ?>
-            
+
             <form action="write_articles.php" method="POST" enctype="multipart/form-data" class="contact-form">
                 <div class="form-group">
-                    <label for="title">Title:</label><br>
+                    <h4><label for="title">Title:</label></h4>
                     <input type="text" id="title" name="title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="content">Content:</label><br>
+                    <h4><label for="content">Content:</label></h4>
                     <textarea id="content" name="content" rows="8" required></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="header_image">Header Image:</label><br>
+                    <h4><label for="header_image">Header Image:</label></h4>
                     <input type="file" id="header_image" name="header_image" required>
                 </div>
 
@@ -88,4 +86,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php include '../includes/footer.php'; ?> <!-- Include the footer -->
 </body>
+
 </html>

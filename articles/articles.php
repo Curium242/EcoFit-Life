@@ -33,9 +33,9 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </a>
                         </h2>
                         <p><?= htmlspecialchars(substr($article['content'], 0, 100)) ?>...</p>
-                        <small>By <?= htmlspecialchars($article['username']) ?> on <?= $article['created_at'] ?></small>
+                        
                         <br>
-                        <a href="article.php?id=<?= htmlspecialchars($article['id']) ?>">Read More</a>
+                        <a href="article.php?id=<?= htmlspecialchars($article['id']) ?>">Read More...</a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

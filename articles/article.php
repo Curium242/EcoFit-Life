@@ -61,8 +61,7 @@ if (!$article) {
             if ($comments):
                 foreach ($comments as $comment): ?>
                     <div class="comment">
-                        <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong> on <?php echo date('F j, Y, g:i a', strtotime($comment['created_at'])); ?></p>
-                        <p><?php echo nl2br(htmlspecialchars($comment['comment'])); ?></p>
+                        <p style="font-size: 1em;"><?php echo htmlspecialchars($comment['username']); ?>: <?php echo nl2br(htmlspecialchars($comment['comment'])); ?></p>
                     </div>
             <?php endforeach;
             else:
@@ -72,10 +71,10 @@ if (!$article) {
 
             <!-- Add Comment Form -->
             <?php if (isset($_SESSION['user_id'])): ?>
-                <h3>Add a Comment</h3>
+                <h4>Add a Comment</h4>
                 <form method="POST" action="comment.php" class="contact-form">
                     <textarea name="comment" placeholder="Write your comment..." required></textarea>
-                    <input type="hidden" name="article_id" value="<?php echo $article_id; ?>">
+                    <input type="hidden" name="article_id" value="<?php echo $article_id; ?>"><br>
                     <button type="submit">Submit</button>
                 </form>
             <?php else: ?>
