@@ -41,10 +41,14 @@ if (!$article) {
         <section class="article">
             <h1><?php echo htmlspecialchars($article['title']); ?></h1>
             <p>By <?php echo htmlspecialchars($article['username']); ?> on <?php echo date('F j, Y', strtotime($article['created_at'])); ?></p>
+            <?php if (!empty($article['header_image'])): ?>
+                <img src="../uploads/<?php echo htmlspecialchars($article['header_image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-image">
+            <?php endif; ?>
             <div>
-                <?php echo nl2br(htmlspecialchars($article['content'])); ?> <!-- nl2br() converts newlines to <br> for better formatting -->
+                <?php echo nl2br(htmlspecialchars($article['content'])); ?> 
             </div>
         </section>
+
 
         <!-- Display Comments -->
         <section class="comments">
