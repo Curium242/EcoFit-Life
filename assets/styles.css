@@ -281,12 +281,13 @@ main {
 .articles-container {
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: space-evenly;
+    
     .article-card {
         background-color: #fff;
         padding: 25px;
         width: 40%;
-        margin: 20px auto;
+        margin: 20px 0;
         border-radius: 5px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
@@ -310,18 +311,11 @@ main {
             color: #009c03;
         }
     }
-}
 
-
-@media (max-width: 900px) {
-    .article-card {
-        width: 35%;
-    }
-}
-
-@media (max-width: 480px) {
-    .article-card {
-        width: 60%;
+    @media screen and (max-width: 950px) {
+        .article-card {
+            width: 65%;
+        }
     }
 }
 
@@ -522,6 +516,7 @@ footer {
 .article,
 .comments {
     padding-left: 5%;
+    padding-top: 20px;
     h1{
         font-size: xx-large;
     }
@@ -536,8 +531,13 @@ footer {
         color: #454545;
     }
     textarea {
+        width: 65%;
         min-width: 500px;
         min-height: 100px;
+    }
+    img {
+        width: 65%;
+        min-width: 500px;
     }
 }
 

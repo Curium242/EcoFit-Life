@@ -21,7 +21,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <section class="articles-hero">
-            <h1>All Articles</h1>
+            <h1 style="text-align: center; width: 95%;">All Articles</h1>
         </section>
         <section class="articles-container">
             <?php if ($articles): ?>
